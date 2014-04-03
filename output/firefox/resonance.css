@@ -2,6 +2,9 @@
     border:0px;
     margin:0px;
 }
+div {
+	border: 5px solid;
+}
 li {
     border-bottom : 1px groove ;
     margin : 3px;
