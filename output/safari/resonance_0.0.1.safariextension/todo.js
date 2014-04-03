@@ -44,7 +44,10 @@ var content = "\
     }\
 </style>\
 	<div id='content' ng-app='todoApp' ng-controller='MainController'>\
-    	<div id='chat' style='width:70%;float:right;'>\
+    	<div id='hotpages' style='width:10%;float:left;'>\
+			list of hot pages\
+		</div>\
+    	<div id='chat' style='width:70%;float:left;'>\
     		<ul>\
         		<li ng-repeat='todo in todos'>\
               		{{todo}}\
@@ -63,9 +66,6 @@ var content = "\
     		<br>\
 			and another\
     		<br>\
-		</div>\
-    	<div id='hot pages' style='width:10%;float:left;'>\
-			list of hot pages
 		</div>\
  	</div>\
 ";
