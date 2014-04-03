@@ -24,9 +24,6 @@ var app = $(document.createElement('div')).attr({
 }).text('Hello, world.')
 .appendTo(document.body);
 
-$('body').css('margin-bottom',SIZE)
-
-
 var content = "\
 <style>\
     #app {\
@@ -46,18 +43,31 @@ var content = "\
         width: 100%;\
     }\
 </style>\
- <div id='content' ng-app='todoApp' ng-controller='MainController'>\
-    <ul>\
-        <li ng-repeat='todo in todos'>\
-              {{todo}}\
-            <button ng-click='del(todo)'>X</button>\
-        </li>\
-    </ul>\
-    <br>\
-    <form ng-submit='addNew()'>\
-        <input id='new' type='text' ng-model='newTodo' />\
-    </form>\
- </div>\
- ";
+	<div id='content' ng-app='todoApp' ng-controller='MainController'>\
+    	<div id='chat' style='width:70%;float:right;'>\
+    		<ul>\
+        		<li ng-repeat='todo in todos'>\
+              		{{todo}}\
+            		<button ng-click='del(todo)'>X</button>\
+       	 		</li>\
+    		</ul>\
+    		<br>\
+    		<form ng-submit='addNew()'>\
+        		<input id='new' type='text' ng-model='newTodo' />\
+    		</form>\
+		</div>\
+    	<div id='loggedin' style='width:20%;float:left;'>\
+			friend list\
+    		<br>\
+			here a friend\
+    		<br>\
+			and another\
+    		<br>\
+		</div>\
+    	<div id='hot pages' style='width:10%;float:left;'>\
+			list of hot pages
+		</div>\
+ 	</div>\
+";
 
 document.getElementById("app").innerHTML = content ;
