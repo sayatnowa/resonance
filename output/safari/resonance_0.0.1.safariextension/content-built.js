@@ -12,7 +12,7 @@ var $ = window.$.noConflict(true); // Required for Opera and IE
 
 var app = $(document.createElement('div')).attr({
     id: 'resonance',
-}).text('Hello, world.')
+})
 .appendTo(document.body);
 
 /***************************************************************************/
@@ -40,13 +40,36 @@ div#resonance {\
 	-moz-opacity:0.5; /* Mozilla */\
 	-khtml-opacity: 0.5; /* Safari */\
 }\
-#resonance div#friendlist,#resonance div#chat,#resonance div#toppages{\
-	width:33%;\
-	float:left;\
+#resonance div#friendlist,\
+#resonance div#chat,\
+#resonance div#toppages{\
+	position:fixed;\
+	width:32%;\
+	height:20%;\
+	max-height:20%;\
 }\
-div#resonance#friendlist{}\
-div#resonance#chat{}\
-div#resonance#toppages{}\
+#resonance div#friendlist{\
+	left:10px;\
+	max-height:100%;\
+}\
+#resonance div#chat{\
+	left:calc(33% + 10px);\
+}\
+#resonance div#friends,\
+#resonance div#history{\
+	overflow:auto;\
+	max-height:calc(100% - 35px);\
+	height:100%;\
+}\
+#resonance div#toppages{\
+	left:calc(66% + 20px);\
+	overflow:auto;\
+}\
+#resonance div#submit{\
+	height:30px;\
+	position:fixed;\
+	bottom:2px;\
+}\
 li #resonance{\
     border-bottom : 1px groove ;\
     margin : 3px;\
@@ -59,13 +82,18 @@ button #resonance{\
     border: 1px solid;\
     width: calc(98% - 2px);\
 }\
+#resonance ul{\
+	max-width:100%;\
+}\
 \
 </style>\
-<div id='resonance' ng-app='todoApp' ng-controller='MainController'>\
+<div ng-app='todoApp' ng-controller='MainController'>\
     <div id='friendlist' ng-controller='FriendController'>\
-            <ul ng-repeat='friend in list'>\
+        <div id='friends'>    \
+	<ul ng-repeat='friend in list'>\
                 {{friend}}\
             </ul>\
+	</div>\
             <form ng-submit='addNew()'>\
                 <input id='new' type='text' ng-model='friend' />\
                 </form>\

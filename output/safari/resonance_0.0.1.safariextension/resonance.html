@@ -1,8 +1,10 @@
-<div id='resonance' ng-app='todoApp' ng-controller='MainController'>
+<div ng-app='todoApp' ng-controller='MainController'>
     <div id='friendlist' ng-controller='FriendController'>
-            <ul ng-repeat="friend in list">
+        <div id='friends'>    
+	<ul ng-repeat="friend in list">
                 {{friend}}
             </ul>
+	</div>
             <form ng-submit='addNew()'>
                 <input id='new' type='text' ng-model='friend' />
                 </form>

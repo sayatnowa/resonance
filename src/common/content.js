@@ -12,7 +12,7 @@ var $ = window.$.noConflict(true); // Required for Opera and IE
 
 var app = $(document.createElement('div')).attr({
     id: 'resonance',
-}).text('Hello, world.')
+})
 .appendTo(document.body);
 
 /***************************************************************************/
