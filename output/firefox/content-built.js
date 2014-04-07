@@ -10,21 +10,10 @@
 
 var $ = window.$.noConflict(true); // Required for Opera and IE
 
-var SIZE = '100px';
-
 var app = $(document.createElement('div')).attr({
-    id: 'app',
-}).css({
-    position: 'fixed',
-    bottom: '0px',
-    height: SIZE,
-    width: '100%',
-    background: 'white',
-    'z-index': '10000'
+    id: 'resonance',
 }).text('Hello, world.')
 .appendTo(document.body);
-
-$('body').css('margin-bottom',SIZE)
 
 /***************************************************************************/
 /* The following will get generated from :
@@ -33,35 +22,72 @@ $('body').css('margin-bottom',SIZE)
 /* Just run the build.sh script.
 /***************************************************************************/
 var content = "\
-<style>\#app {\
+<style>\#resonance {\
     border:0px;\
     margin:0px;\
+    clear:both;\
 }\
-li {\
+div#resonance {\
+	border: 3px solid;\
+	width: calc(100% - 6px);\
+	height : 20%;\
+	position : fixed;\
+	bottom : 0px;\
+	z-index:100000000;\
+	background-color:white;\
+	opacity:0.8;\
+	filter:alpha(opacity=50); /* IE */\
+	-moz-opacity:0.5; /* Mozilla */\
+	-khtml-opacity: 0.5; /* Safari */\
+}\
+#resonance div#friendlist,#resonance div#chat,#resonance div#toppages{\
+	width:33%;\
+	float:left;\
+}\
+div#resonance#friendlist{}\
+div#resonance#chat{}\
+div#resonance#toppages{}\
+li #resonance{\
     border-bottom : 1px groove ;\
     margin : 3px;\
 }\
-button {\
+button #resonance{\
     float : right;\
 }\
-#new {\
+#new #resonance{\
     background-color: #FFFFFF;\
-    border: 5px solid;\
-    width: 100%;\
+    border: 1px solid;\
+    width: calc(98% - 2px);\
 }\
+\
 </style>\
-<div id='content' ng-app='todoApp' ng-controller='MainController'>\
-    <ul>\
-        <li ng-repeat='todo in todos'>\
-              {{todo}}\
-            <button ng-click='del(todo)'>X</button>\
-        </li>\
-    </ul>\
-    <br>\
-    <form ng-submit='addNew()'>\
-        <input id='new' type='text' ng-model='newTodo' />\
-    </form>\
+<div id='resonance' ng-app='todoApp' ng-controller='MainController'>\
+    <div id='friendlist' ng-controller='FriendController'>\
+            <ul ng-repeat='friend in list'>\
+                {{friend}}\
+            </ul>\
+            <form ng-submit='addNew()'>\
+                <input id='new' type='text' ng-model='friend' />\
+                </form>\
+    </div>\
+    <div id='chat'>\
+        <div id='history'>\
+                <ul ng-repeat='msg in resonance'>\
+                    {{pseudo}} : {{msg}}\
+                </ul>\
+            <br>\
+        </div>\
+        <div id='submit'>\
+            <form ng-submit='addNew()'>\
+                <input id='new' type='text' ng-model='message' />\
+            </form>\
+        </div>\
+    </div>\
+    <div id='toppages'>\
+        Some good pages\
+    </div>\
 </div>\
+\
 ";
 
-document.getElementById("app").innerHTML = content ;
+document.getElementById("resonance").innerHTML = content ;

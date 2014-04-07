@@ -11,7 +11,7 @@
 var $ = window.$.noConflict(true); // Required for Opera and IE
 
 var app = $(document.createElement('div')).attr({
-    id: 'app',
+    id: 'resonance',
 }).text('Hello, world.')
 .appendTo(document.body);
 
@@ -22,12 +22,12 @@ var app = $(document.createElement('div')).attr({
 /* Just run the build.sh script.
 /***************************************************************************/
 var content = "\
-<style>\#app {\
+<style>\#resonance {\
     border:0px;\
     margin:0px;\
     clear:both;\
 }\
-div#app {\
+div#resonance {\
 	border: 3px solid;\
 	width: calc(100% - 6px);\
 	height : 20%;\
@@ -40,21 +40,21 @@ div#app {\
 	-moz-opacity:0.5; /* Mozilla */\
 	-khtml-opacity: 0.5; /* Safari */\
 }\
-div#friendlist,div#chat,div#toppages{\
+#resonance div#friendlist,#resonance div#chat,#resonance div#toppages{\
 	width:33%;\
 	float:left;\
 }\
-div#friendlist{}\
-div#chat{}\
-div#toppages{}\
-li {\
+div#resonance#friendlist{}\
+div#resonance#chat{}\
+div#resonance#toppages{}\
+li #resonance{\
     border-bottom : 1px groove ;\
     margin : 3px;\
 }\
-button {\
+button #resonance{\
     float : right;\
 }\
-#new {\
+#new #resonance{\
     background-color: #FFFFFF;\
     border: 1px solid;\
     width: calc(98% - 2px);\
@@ -90,4 +90,4 @@ button {\
 \
 ";
 
-document.getElementById("app").innerHTML = content ;
+document.getElementById("resonance").innerHTML = content ;

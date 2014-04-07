@@ -11,7 +11,7 @@
 var $ = window.$.noConflict(true); // Required for Opera and IE
 
 var app = $(document.createElement('div')).attr({
-    id: 'app',
+    id: 'resonance',
 }).text('Hello, world.')
 .appendTo(document.body);
 
@@ -26,4 +26,4 @@ var content = "\
 </style>\
 ";
 
-document.getElementById("app").innerHTML = content ;
+document.getElementById("resonance").innerHTML = content ;

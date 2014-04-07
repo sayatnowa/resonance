@@ -1,19 +1,37 @@
-#app {
+#resonance {
     border:0px;
     margin:0px;
+    clear:both;
 }
-div {
-	border: 5px solid;
+div#resonance {
+	border: 3px solid;
+	width: calc(100% - 6px);
+	height : 20%;
+	position : fixed;
+	bottom : 0px;
+	z-index:100000000;
+	background-color:white;
+	opacity:0.8;
+	filter:alpha(opacity=50); /* IE */
+	-moz-opacity:0.5; /* Mozilla */
+	-khtml-opacity: 0.5; /* Safari */
 }
-li {
+#resonance div#friendlist,#resonance div#chat,#resonance div#toppages{
+	width:33%;
+	float:left;
+}
+div#resonance#friendlist{}
+div#resonance#chat{}
+div#resonance#toppages{}
+li #resonance{
     border-bottom : 1px groove ;
     margin : 3px;
 }
-button {
+button #resonance{
     float : right;
 }
-#new {
+#new #resonance{
     background-color: #FFFFFF;
-    border: 5px solid;
-    width: 100%;
+    border: 1px solid;
+    width: calc(98% - 2px);
 }
