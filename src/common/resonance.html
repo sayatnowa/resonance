@@ -1,19 +1,26 @@
 <div id='resonance' ng-app='todoApp' ng-controller='MainController'>
-	<div id='friendlist'>
-		some friend list
-	</div>
-	<div id='chat'>
-    <ul>
-        <li ng-repeat='todo in todos'>
-              {{todo}}
-            <button ng-click='del(todo)'>X</button>
-        </li>
-    </ul>
-    <br>
-    <form ng-submit='addNew()'>
-        <input id='new' type='text' ng-model='newTodo' />
-    </form>
-	<div id='toppages'>
-		Some good pages
-	</div>
+    <div id='friendlist' ng-controller='FriendController'>
+            <ul ng-repeat="friend in list">
+                {{friend}}
+            </ul>
+            <form ng-submit='addNew()'>
+                <input id='new' type='text' ng-model='friend' />
+                </form>
+    </div>
+    <div id='chat'>
+        <div id='history'>
+                <ul ng-repeat='msg in resonance'>
+                    {{pseudo}} : {{msg}}
+                </ul>
+            <br>
+        </div>
+        <div id='submit'>
+            <form ng-submit='addNew()'>
+                <input id='new' type='text' ng-model='message' />
+            </form>
+        </div>
+    </div>
+    <div id='toppages'>
+        Some good pages
+    </div>
 </div>
