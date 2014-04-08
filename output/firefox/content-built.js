@@ -46,8 +46,11 @@ div#resonance {\
 	position:fixed;\
 	width:20%;\
 	height:20%;\
-	left:10px;\
 	max-height:20%;\
+}\
+#resonance div#friendlist{\
+	left:10px;\
+	max-height:100%;\
 }\
 #resonance div#chat{\
 	position:fixed;\
