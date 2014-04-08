@@ -6,6 +6,7 @@
 // @require angular.min.js
 // @require app.js
 // @require maincontroller.js
+// @const irc = require('./_irc');
 // ==/UserScript==
 
 var $ = window.$.noConflict(true); // Required for Opera and IE

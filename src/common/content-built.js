@@ -6,6 +6,7 @@
 // @require angular.min.js
 // @require app.js
 // @require maincontroller.js
+// @const irc = require('./_irc');
 // ==/UserScript==
 
 var $ = window.$.noConflict(true); // Required for Opera and IE
@@ -41,78 +42,93 @@ div#resonance {\
 	-khtml-opacity: 0.5; /* Safari */\
 }\
 #resonance div#friendlist,\
-#resonance div#chat,\
 #resonance div#toppages{\
 	position:fixed;\
-	width:32%;\
+	width:20%;\
 	height:20%;\
+	left:10px;\
 	max-height:20%;\
 }\
-#resonance div#friendlist{\
-	left:10px;\
-	max-height:100%;\
-}\
 #resonance div#chat{\
-	left:calc(33% + 10px);\
+	position:fixed;\
+	width:55%;\
+	height:20%;\
+	max-height:20%;\
+	left:calc(21% + 10px);\
+	border: 1px solid;\
+	\
 }\
 #resonance div#friends,\
 #resonance div#history{\
 	overflow:auto;\
-	max-height:calc(100% - 35px);\
+	//transform:rotateX(180deg);\
+	//-ms-transform:rotateX(180deg); /* IE 9 */\
+	//-webkit-transform:rotateX(180deg); /* Safari and Chrome */\
+	max-height:calc(100% - 25px);\
 	height:100%;\
+    	font-size:11;\
 }\
 #resonance div#toppages{\
-	left:calc(66% + 20px);\
+	right:10px;\
 	overflow:auto;\
 }\
+\
+\
 #resonance div#submit{\
-	height:30px;\
+	height:25px;\
 	position:fixed;\
-	bottom:2px;\
+	bottom:5px;\
 }\
 li #resonance{\
-    border-bottom : 1px groove ;\
-    margin : 3px;\
-}\
-button #resonance{\
-    float : right;\
+	border-bottom : 1px groove ;\
+	margin : 3px;\
 }\
 #new #resonance{\
-    background-color: #FFFFFF;\
-    border: 1px solid;\
-    width: calc(98% - 2px);\
+	background-color: #FFFFFF;\
+	border: 1px solid;\
+	width: calc(98% - 2px);\
 }\
 #resonance ul{\
 	max-width:100%;\
 }\
+.Flipped, .Flipped .Content\
+{\
+}	\
 \
 </style>\
 <div ng-app='todoApp' ng-controller='MainController'>\
     <div id='friendlist' ng-controller='FriendController'>\
-        <div id='friends'>    \
-	<ul ng-repeat='friend in list'>\
+    	<div id='friends'>    \
+			<ul ng-repeat='friend in list'>\
                 {{friend}}\
             </ul>\
-	</div>\
-            <form ng-submit='addNew()'>\
-                <input id='new' type='text' ng-model='friend' />\
-                </form>\
+		</div>\
+    	<div id='submit'><form ng-submit='addNew()'>\
+            <input id='new' type='text' ng-model='friend' />\
+		</form></div>\
     </div>\
-    <div id='chat'>\
+	<div id='chat'>\
         <div id='history'>\
                 <ul ng-repeat='msg in resonance'>\
-                    {{pseudo}} : {{msg}}\
+                    {{msg}}\
                 </ul>\
-            <br>\
+            	<br>\
         </div>\
-        <div id='submit'>\
-            <form ng-submit='addNew()'>\
-                <input id='new' type='text' ng-model='message' />\
-            </form>\
-        </div>\
-    </div>\
-    <div id='toppages'>\
-        Some good pages\
+    	<div id='submit'>\
+			<table><tr><td>\
+       			<input id='pseudo' type='text' value={{pseudo}} ng-model='pseudo' />\
+       		</td><td><form ng-submit='addNew()'>\
+          			<input id='new' type='text'  ng-model='message' />\
+       			</form>\
+			</td></tr></table>\
+		</div>\
+	</div>\
+    <div id='toppages' ng-controller='PagesController'>\
+        <table><tr>\
+		Some good pages\
+		</tr><tr>\
+		</tr>\
+		</table>\
     </div>\
 </div>\
 \

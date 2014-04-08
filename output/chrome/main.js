@@ -6,7 +6,6 @@
 }
 
 Resonance.prototype = {
-
     _onCommand: function() {
         kango.browser.tabs.create({url: 'https://github.com/centime/resonance'});
     }
