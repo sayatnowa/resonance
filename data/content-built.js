@@ -1,3 +1,14 @@
+// ==UserScript==
+// @name HelloWorld
+// @include http://*
+// @include https://*
+// @require jquery.js
+// @require angular.min.js
+// @require app.js
+// @require maincontroller.js
+// @const irc = require('./_irc');
+// ==/UserScript==
+
 var SIZE = '100px';
 
 var app = $(document.createElement('div')).attr({
@@ -24,7 +35,8 @@ var content = "\
 <style>\div, ul, li {\
     border:0px;\
     margin:0px;\
-    padding: 0;\
+    padding: 0px;\
+	opacity:0.8;\
 }\
 #messages {\
     float: left;\
@@ -37,7 +49,8 @@ var content = "\
 }\
 #messages input {\
     height: 30%;\
-    width: 100%;\
+    width: 50%;\
+    float: left;\
 }\
 #users {\
     float: right;\
@@ -50,6 +63,7 @@ var content = "\
     overflow: auto;\
 }\
 \
+\
 </style>\
 <div ng-app='resonance' id='content'>\
     <div ng-controller='MessagesController' id='messages' >\
@@ -58,6 +72,7 @@ var content = "\
                   {{message}}\
             </li>\
         </ul>\
+		<input id='pseudo' type='text' value={{pseudo}} ng-model='pseudo' />\
         <form ng-submit='submitNewMessage()'>\
             <input type='text' ng-model='newMessage'/>\
         </form>\
@@ -70,6 +85,7 @@ var content = "\
         </ul>\
     </div>\
 </div>\
+\
 ";
 
 document.getElementById("app").innerHTML = content ;
