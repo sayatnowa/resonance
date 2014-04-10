@@ -1,3 +1,14 @@
+// ==UserScript==
+// @name HelloWorld
+// @include http://*
+// @include https://*
+// @require jquery.js
+// @require angular.min.js
+// @require app.js
+// @require maincontroller.js
+// @const irc = require('./_irc');
+// ==/UserScript==
+
 var SIZE = '100px';
 
 var app = $(document.createElement('div')).attr({

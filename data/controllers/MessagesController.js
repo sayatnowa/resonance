@@ -1,8 +1,8 @@
-
 app.controller("MessagesController", function($scope){
     
     $scope.messages = [];
     $scope.newMessage = '';
+<<<<<<< HEAD
     var elmt = angular.element('#messages .list') ;
     
     $scope.submitNewMessage =  function(){
@@ -20,3 +20,11 @@ app.controller("MessagesController", function($scope){
     });
 
 });
+=======
+    $scope.pseudo = "Wutwut";
+    $scope.submitNewMessage =  function(){
+                            $scope.messages.push($scope.pseudo+' : '+$scope.newMessage);
+                        };
+
+});
+>>>>>>> db31a35746a79fffd4b30f184d3ce8e5b9d2c8f2

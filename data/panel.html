@@ -10,6 +10,43 @@
         </div>
         <ul id="users-list"></ul>
     </body>
+<div ng-app='todoApp' ng-controller='MainController'>
+
+    <div id='friendlist' ng-controller='FriendController'>
+        <div id='friends'>
+                        <ul ng-repeat="friend in list">
+                {{friend}}
+            </ul>
+                </div>
+        <div id='submit'><form ng-submit='addNew()'>
+            <input id='new' type='text' ng-model='friend' />
+                </form></div>
+    </div>
+        <div id='chat'>
+        <div id='history'>
+                <ul ng-repeat='msg in resonance'>
+                    {{msg}}
+                </ul>
+                <br>
+        </div>
+        <div id='submit'>
+                        <table><tr><td>
+                        <input id='pseudo' type='text' value={{pseudo}} ng-model='pseudo' />
+                </td><td><form ng-submit='addNew()'>
+                                <input id='new' type='text'  ng-model='message' />
+                        </form>
+                        </td></tr></table>
+                </div>
+        </div>
+    <div id='toppages' ng-controller='PagesController'>
+        <table><tr ng-model='client'>
+                test client : {{client}}
+                Some good pages
+                </tr><tr>
+                </tr>
+                </table>
+    </div>
+</div>
 
     <script src="app.js"></script>
 </html>
