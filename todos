@@ -19,6 +19,9 @@ client :
 CSS :
     transparence ?
 
+nomage :
+    mettre des identifiants bien uniques pour le css / html / var
+
 annonces :
     resonances
     errrors    
