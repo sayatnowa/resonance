@@ -288,7 +288,7 @@ class Tests
     if test.check()
       result = 'Passed.'
     if not (test.prereq?)
-      console.log('[[ TESTS ]] '+test.name+' : '+result)
+      console.error('[[ TESTS ]] '+test.name+' : '+result)
     assert = @assert
     for next in test.followers
       do (next) ->
